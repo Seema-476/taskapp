@@ -24,6 +24,11 @@
     max-width: 540px;
 }
 
+.box2 {
+    height: 200px;
+    overflow: hidden;
+}
+
 .inputb {
     color: #808080;
     font-family: 'Inter', sans-serif;
@@ -32,6 +37,9 @@
     line-height: 19.36px;
     border: none;
     outline: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
 }
 
 .addtask {

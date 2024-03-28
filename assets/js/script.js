@@ -5,11 +5,15 @@ const ul = document.querySelector(".ul");
 
 
 function todo() {
-    inputb.value === ''
-    const li = document.createElement("li")
-    li.innerHTML = inputb.value;
-    li.className = "list"
-    li.innerHTML = `
+    if (inputb.value === "") {
+        alert("write your task!")
+    }
+    else {
+        inputb.value === ''
+        const li = document.createElement("li")
+        li.innerHTML = inputb.value;
+        li.className = "list"
+        li.innerHTML = `
     <div class="content active d-flex justify-content-between align-items-center mb-2">
 <p class="mb-0 active">${inputb.value}</p>
 <div class="d-flex align-items-center justify-content-center gap-3">
@@ -31,22 +35,23 @@ function todo() {
 </div>
 `
 
-    ul.appendChild(li)
-    inputb.value = ''
-    // delete task
-    li.querySelector("span").addEventListener("click", remove);
-    function remove() {
-        li.remove()
+        ul.appendChild(li)
+        // delete task
+        li.querySelector("span").addEventListener("click", remove);
+        function remove() {
+            li.remove()
+        }
     }
-
+    inputb.value = ''
 };
 // task checked
 ul.addEventListener("click", (e) => {
     if (e.target.classList.contains("svgcircle")) {
         e.target.parentElement.parentElement.classList.toggle("linethro");
-        saveData()
     }
 });
+
+
 
 
 
